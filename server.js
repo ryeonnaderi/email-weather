@@ -4,22 +4,24 @@ require("dotenv").config();
 const axios = require('axios')
 const nodemailer = require("nodemailer");
 const util = require("util")
-const key = require("./keys")
+ import{PASSWORD} from "./keys";
+import { EMAIL } from "./keys";
+import {ACCESS_KEY} from "./keys";
 
 function sendMail() {
   const user = process.env.EMAIL
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: process.env.EMAIL,
-      pass: process.env.PASSWORD
+      user: EMAIL,
+      pass: PASSWORD
     }
   });
 
 
   const sendMail = util.promisify(transporter.sendMail.bind(transporter))
 
-  const ACCESS_KEY = "b08ca5ecfe711f6d001286eef6653f15";
+  
   const contacts = [
     {
       email: "4044289111@tmomail.net",
