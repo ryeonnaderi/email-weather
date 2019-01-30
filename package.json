@@ -1,0 +1,27 @@
+{
+  "name": "email-weather",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "dotenv": "^6.2.0",
+    "nodemailer": "^5.1.1",
+    "util": "^0.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryeonnaderi/email-weather.git"
+  },
+  "author": "ryeon naderi <ryeonnaderi@gmail.com> (http://www/ryeonnaderi.com)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryeonnaderi/email-weather/issues"
+  },
+  "homepage": "https://github.com/ryeonnaderi/email-weather#readme"
+}
