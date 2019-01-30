@@ -4,17 +4,15 @@ require("dotenv").config();
 const axios = require('axios')
 const nodemailer = require("nodemailer");
 const util = require("util")
- import{PASSWORD} from "./keys";
-import { EMAIL } from "./keys";
-import {ACCESS_KEY} from "./keys";
+const key = require("./keys")
 
 function sendMail() {
   const user = process.env.EMAIL
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: EMAIL,
-      pass: PASSWORD
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
     }
   });
 
@@ -115,7 +113,7 @@ function sendMail() {
         country,
         timezone
       } = contact.location
-      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${ACCESS_KEY}&units=imperial`);
+      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${process.env.ACCESS_KEY}&units=imperial`);
       console.log(api_call.data);
       const {
         main,

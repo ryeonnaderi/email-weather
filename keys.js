@@ -8,5 +8,5 @@ exports.password={
 
 
 exports.access_key={
-    access_key = process.env.ACCESS_KEY
+    access_key: process.env.ACCESS_KEY
 }
