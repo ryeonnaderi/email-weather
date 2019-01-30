@@ -5,17 +5,14 @@ const axios = require('axios')
 const nodemailer = require("nodemailer");
 const util = require("util")
 const key = require("./keys")
-const EMAIL = "ryeonnaderi@gmail.com";
-
-const PASSWORD = "Naderi123";
 
 function sendMail() {
-  const user = EMAIL
+  const user = process.env.EMAIL
   var transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: EMAIL,
-      pass: PASSWORD
+      user: process.env.EMAIL,
+      pass: process.env.PASSWORD
     }
   });
 
@@ -126,7 +123,7 @@ function sendMail() {
       } = api_call.data
 
       let mailOptions = {
-        from: EMAIL,
+        from: process.env.EMAIL,
         to: contact.email,
         subject: `Weather data for ${city}, ${state}`,
         text: `
