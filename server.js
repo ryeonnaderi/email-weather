@@ -19,7 +19,7 @@ function sendMail() {
 
   const sendMail = util.promisify(transporter.sendMail.bind(transporter))
 
-  
+  const ACCESS_KEY = b08ca5ecfe711f6d001286eef6653f15
   const contacts = [
     {
       email: "4044289111@tmomail.net",
@@ -113,7 +113,7 @@ function sendMail() {
         country,
         timezone
       } = contact.location
-      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${process.env.ACCESS_KEY}&units=imperial`);
+      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${ACCESS_KEY}&units=imperial`);
       console.log(api_call.data);
       const {
         main,
