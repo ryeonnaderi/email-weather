@@ -28,6 +28,7 @@ function sendMail() {
         state: 'GA',
         country: 'US',
         zip_Code:"30067",
+        country_code:"1",
         timezone: 'America/New_York'
       }
     },
@@ -37,6 +38,7 @@ function sendMail() {
     //     city: 'Marietta',
     //     state: 'GA',
     //     country: 'US',
+    //      country_code:"1",
     //     timezone: 'America/New_York'
     //   }
     // },
@@ -46,6 +48,7 @@ function sendMail() {
     //     city: 'Marietta',
     //     state: 'GA',
     //     country: 'US',
+    //    country_code:"1",
     //     timezone: 'America/New_York'
     //   }
     // },
@@ -55,6 +58,7 @@ function sendMail() {
     //     city: 'Marietta',
     //     state: 'GA',
     //     country: 'US',
+    //     country_code:"1",
     //     timezone: 'America/New_York'
     //   }
     // },
@@ -65,6 +69,7 @@ function sendMail() {
     //     city: 'Marietta',
     //     state: 'GA',
     //     country: 'US',
+    //      country_code:"1",
     //     timezone: 'America/New_York'
     //   }
     // },
@@ -74,6 +79,7 @@ function sendMail() {
     //     city: 'Marietta',
     //     state: 'GA',
     //     country: 'US',
+    //     country_code:"1",
     //     timezone: 'America/New_York'
     //   }
     // },
@@ -84,6 +90,7 @@ function sendMail() {
     //     city: 'Austin',
     //     state: 'TX',
     //     country: 'US',
+    //     country_code:"1",
     //     timezone: 'America/Chicago'
     //   }
     // },
@@ -94,6 +101,7 @@ function sendMail() {
         state: 'GA',
         country: 'US',
         zip_Code:"30067",
+        country_code:"1",
         timezone: 'America/New_York'
       }
     }
@@ -114,9 +122,10 @@ function sendMail() {
         state,
         country,
         zip_Code,
+        country_code,
         timezone
       } = contact.location
-      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country},${zip_Code}&appid=${process.env.ACCESS_KEY}&units=imperial`);
+      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country},zip=${zip_Code},${country_code}&appid=${process.env.ACCESS_KEY}&units=imperial`);
       console.log(api_call.data);
       const {
         main,
