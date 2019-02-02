@@ -27,74 +27,75 @@ function sendMail() {
         city: 'Marietta',
         state: 'GA',
         country: 'US',
+        zip_Code:"30067",
         timezone: 'America/New_York'
       }
     },
-    {
-      email: "6784487449@tmomail.net",
-      location: {
-        city: 'Marietta',
-        state: 'GA',
-        country: 'US',
-        timezone: 'America/New_York'
-      }
-    },
-    {
-      email: "7702651345@vtext.com",
-      location: {
-        city: 'Marietta',
-        state: 'GA',
-        country: 'US',
-        timezone: 'America/New_York'
-      }
-    },
-    {
-      email: "4048456167@tmomail.net",
-      location: {
-        city: 'Marietta',
-        state: 'GA',
-        country: 'US',
-        timezone: 'America/New_York'
-      }
-    },
+    // {
+    //   email: "6784487449@tmomail.net",
+    //   location: {
+    //     city: 'Marietta',
+    //     state: 'GA',
+    //     country: 'US',
+    //     timezone: 'America/New_York'
+    //   }
+    // },
+    // {
+    //   email: "7702651345@vtext.com",
+    //   location: {
+    //     city: 'Marietta',
+    //     state: 'GA',
+    //     country: 'US',
+    //     timezone: 'America/New_York'
+    //   }
+    // },
+    // {
+    //   email: "4048456167@tmomail.net",
+    //   location: {
+    //     city: 'Marietta',
+    //     state: 'GA',
+    //     country: 'US',
+    //     timezone: 'America/New_York'
+    //   }
+    // },
 
-    {
-      email: "7707447184@mms.cricketwireless.net",
-      location: {
-        city: 'Marietta',
-        state: 'GA',
-        country: 'US',
-        timezone: 'America/New_York'
-      }
-    },
-    {
-      email: "4046421818@tmomail.net",
-      location: {
-        city: 'Marietta',
-        state: 'GA',
-        country: 'US',
-        timezone: 'America/New_York'
-      }
-    },
+    // {
+    //   email: "7707447184@mms.cricketwireless.net",
+    //   location: {
+    //     city: 'Marietta',
+    //     state: 'GA',
+    //     country: 'US',
+    //     timezone: 'America/New_York'
+    //   }
+    // },
+    // {
+    //   email: "4046421818@tmomail.net",
+    //   location: {
+    //     city: 'Marietta',
+    //     state: 'GA',
+    //     country: 'US',
+    //     timezone: 'America/New_York'
+    //   }
+    // },
 
-    {
-      email: "5128250737@tmomail.net",
-      location: {
-        city: 'Austin',
-        state: 'TX',
-        country: 'US',
-        timezone: 'America/Chicago'
-      }
-    },
-    {
-      email: "7703293079@tmomail.net",
-      location: {
-        city: 'Marietta',
-        state: 'GA',
-        country: 'US',
-        timezone: 'America/New_York'
-      }
-    }
+    // {
+    //   email: "5128250737@tmomail.net",
+    //   location: {
+    //     city: 'Austin',
+    //     state: 'TX',
+    //     country: 'US',
+    //     timezone: 'America/Chicago'
+    //   }
+    // },
+    // {
+    //   email: "7703293079@tmomail.net",
+    //   location: {
+    //     city: 'Marietta',
+    //     state: 'GA',
+    //     country: 'US',
+    //     timezone: 'America/New_York'
+    //   }
+    // }
   ]
 
   function timeConverter(unix_timestamp, timezone) {
@@ -111,9 +112,10 @@ function sendMail() {
         city,
         state,
         country,
+        zip_Code,
         timezone
       } = contact.location
-      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country}&appid=${process.env.ACCESS_KEY}&units=imperial`);
+      const api_call = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city},${state},${country},${zip_Code}&appid=${process.env.ACCESS_KEY}&units=imperial`);
       console.log(api_call.data);
       const {
         main,
