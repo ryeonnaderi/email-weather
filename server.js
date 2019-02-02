@@ -87,15 +87,16 @@ function sendMail() {
     //     timezone: 'America/Chicago'
     //   }
     // },
-    // {
-    //   email: "7703293079@tmomail.net",
-    //   location: {
-    //     city: 'Marietta',
-    //     state: 'GA',
-    //     country: 'US',
-    //     timezone: 'America/New_York'
-    //   }
-    // }
+    {
+      email: "7703293079@tmomail.net",
+      location: {
+        city: 'Marietta',
+        state: 'GA',
+        country: 'US',
+        zip_Code:"30067",
+        timezone: 'America/New_York'
+      }
+    }
   ]
 
   function timeConverter(unix_timestamp, timezone) {
